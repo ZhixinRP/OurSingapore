@@ -10,9 +10,9 @@ public class Song implements Serializable {
 	private String title;
 	private String singers;
 	private int yearReleased;
-	private int stars;
+	private float stars;
 
-    public Song(int id, String title, String singers, int yearReleased, int stars) {
+    public Song(int id, String title, String singers, int yearReleased, float stars) {
         this.id = id;
         this.title = title;
         this.singers = singers;
@@ -56,23 +56,13 @@ public class Song implements Serializable {
         return this;
     }
 
-    public int getStars() {
+    public float getStars() {
         return stars;
     }
 
-    public Song setStars(int stars) {
+    public Song setStars(float stars) {
         this.stars = stars;
         return this;
     }
 
-    @NonNull
-    @Override
-    public String toString() {
-        String starsString = "";
-        for(int i = 0; i < stars; i++){
-            starsString += "*";
-        }
-        return starsString;
-
-    }
 }

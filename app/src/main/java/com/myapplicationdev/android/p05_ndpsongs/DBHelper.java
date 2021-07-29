@@ -36,7 +36,7 @@ public class DBHelper extends SQLiteOpenHelper {
 				+ COLUMN_TITLE + " TEXT, "
 				+ COLUMN_SINGERS + " TEXT, "
 				+ COLUMN_YEAR + " INTEGER, "
-                + COLUMN_STARS + " INTEGER )";
+                + COLUMN_STARS + " REAL )";
 		db.execSQL(createSongTableSql);
 		Log.i("info", createSongTableSql + "\ncreated tables");
 	}
@@ -47,7 +47,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		onCreate(db);
 	}
 
-	public long insertSong(String title, String singers, int year, int stars) {
+	public long insertSong(String title, String singers, int year, float stars) {
 		// Get an instance of the database for writing
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
@@ -78,7 +78,7 @@ public class DBHelper extends SQLiteOpenHelper {
 				String title = cursor.getString(1);
 				String singers = cursor.getString(2);
 				int year = cursor.getInt(3);
-                int stars = cursor.getInt(4);
+                float stars = cursor.getFloat(4);
 
 				Song newSong = new Song(id, title, singers, year, stars);
                 songslist.add(newSong);
@@ -114,7 +114,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 String title = cursor.getString(1);
                 String singers = cursor.getString(2);
                 int year = cursor.getInt(3);
-                int stars = cursor.getInt(4);
+                float stars = cursor.getFloat(4);
 
                 Song newSong = new Song(id, title, singers, year, stars);
                 songslist.add(newSong);
@@ -190,7 +190,7 @@ public class DBHelper extends SQLiteOpenHelper {
 				String title = cursor.getString(1);
 				String singers = cursor.getString(2);
 				int year = cursor.getInt(3);
-				int stars = cursor.getInt(4);
+				float stars = cursor.getInt(4);
 
 				Song newSong = new Song(id, title, singers, year, stars);
 				songslist.add(newSong);

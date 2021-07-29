@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
 
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="TextView"
+        android:text="SONG TITLE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#0000FF" />
+
+    <TextView
+        android:id="@+id/textViewSinger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="SINGER"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#00FFFF" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -22,27 +33,25 @@
 
         <TextView
             android:id="@+id/textViewYear"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="TextView" />
+            android:text="YEAR" />
 
-        <TextView
-            android:id="@+id/textViewStars"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBarUpdate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="#FF0000" />
-    </LinearLayout>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:isIndicator="true" />
 
-    <TextView
-        android:id="@+id/textViewSinger"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="TextView"
-        android:textColor="#00FFFF"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+    </LinearLayout>
 
 </LinearLayout>
